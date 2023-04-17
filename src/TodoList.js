@@ -15,6 +15,7 @@ class TodoList extends Component {
             var newItem = {
                 text: this._inputElement.value,
                 key: Date.now(),
+                priority: this._selectElement.value,
             };
 
             this.setState((prevState) => {
@@ -58,6 +59,11 @@ class TodoList extends Component {
                             ref={(a) => (this._inputElement = a)}
                             placeholder="enter task"
                         ></input>
+                        <select ref={(a) => (this._selectElement = a)}>
+                            <option value="1">High</option>
+                            <option value="2">Medium</option>
+                            <option value="3">Low</option>
+                        </select>
                         <button type="submit">add</button>
                     </form>
                     <TodoItems
