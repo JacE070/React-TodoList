@@ -26,12 +26,26 @@ class TodoItem extends Component {
         this.toggleEditing();
     };
 
+    priorityStyle(priority) {
+        switch (priority) {
+            case "1":
+                return "high-priority";
+            case "2":
+                return "medium-priority";
+            case "3":
+                return "low-priority";
+            default:
+                return "";
+        }
+    }
+
     render() {
         const { isEditing, editedText } = this.state;
         const { delete: deleteItem, keyValue } = this.props;
+        const priorityClass = this.priorityStyle(this.props.priority);
 
         return (
-            <li>
+            <li className={priorityClass}>
                 {isEditing ? (
                     <input
                         type="text"
