@@ -1,0 +1,40 @@
+.theList {
+    list-style: none;
+    padding-left: 0;
+    width: 250px;
+}
+.theList li {
+    color: #333;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    list-style: none;
+}
+ul.theList {
+    padding: 0;
+}
+
+.high-priority {
+    background-color: #f28e8e; /* Red */
+}
+
+.medium-priority {
+    background-color: #f4d160; /* Yellow */
+}
+
+.low-priority {
+    background-color: #8ee4af; /* Green */
+}
+
+.theList li:not(.high-priority):not(.medium-priority):not(.low-priority) {
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+.theList li {
+    transition: background-color 0.2s ease-out;
+}
+
+.theList li:not(.high-priority):not(.medium-priority):not(.low-priority):hover {
+    background-color: pink;
+    cursor: pointer;
+}
